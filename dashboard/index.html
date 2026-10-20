@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+    <header class="topbar">
+      <div class="container-fluid">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <h4 class="mb-0">Dashboard</h4>
+            <small>Herramientas para docentes</small>
+          </div>
+
+          <div class="d-flex align-items-center gap-3">
+            <span>
+              <i class="bi bi-person-circle"></i>
+              Jennifer López
+            </span>
+
+            <button
+              class="btn btn-outline-light btn-sm"
+              onclick="cerrarSesion()"
+            >
+              <i class="bi bi-box-arrow-right"></i>
+              Salir
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md-3 col-lg-2 sidebar">
+          <nav class="nav flex-column">
+            <a href="index.html" class="nav-link active">
+              <i class="bi bi-speedometer2"></i>
+              Dashboard
+            </a>
+
+            <a href="#" class="nav-link" onclick="enrolarAlumnos()">
+              <i class="bi bi-person-plus"></i>
+              Enrolar alumnos
+            </a>
+
+            <a href="#" class="nav-link" onclick="configuracion()">
+              <i class="bi bi-gear"></i>
+              Configuración
+            </a>
+
+            <a href="#" class="nav-link" onclick="cerrarSesion()">
+              <i class="bi bi-box-arrow-right"></i>
+              Salir
+            </a>
+          </nav>
+        </aside>
+
+        <main class="col-md-9 col-lg-10 contenido">
+          <div class="container-fluid">
+            <div class="mb-4">
+              <h1>Dashboard</h1>
+              <p class="text-muted">Resumen de asistencia de la clase</p>
+            </div>
+
+            <div class="row g-4 mb-4">
+              <div class="col-12 col-sm-6 col-xl-3">
+                <div class="card metric-card h-100">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                      <div>
+                        <h6 class="text-muted">Cantidad de alumnos</h6>
+
+                        <h2>35</h2>
+                      </div>
+
+                      <div class="metric-icon">
+                        <i class="bi bi-people"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-sm-6 col-xl-3">
+                <div class="card metric-card h-100">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                      <div>
+                        <h6 class="text-muted">Días de clase efectuados</h6>
+
+                        <h2>24</h2>
+                      </div>
+
+                      <div class="metric-icon">
+                        <i class="bi bi-calendar-check"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-sm-6 col-xl-3">
+                <div class="card metric-card h-100">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                      <div>
+                        <h6 class="text-muted">Promedio de asistencia</h6>
+
+                        <h2>89%</h2>
+                      </div>
+
+                      <div class="metric-icon">
+                        <i class="bi bi-graph-up"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-sm-6 col-xl-3">
+                <div class="card metric-card h-100">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                      <div>
+                        <h6 class="text-muted">Alumnos en riesgo</h6>
+
+                        <h2>5</h2>
+                      </div>
+
+                      <div class="metric-icon">
+                        <i class="bi bi-exclamation-triangle"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row g-4 mb-4">
+              <div class="col-12 col-md-6">
+                <div class="card metric-card">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                      <div>
+                        <h6 class="text-muted">Alumnos sin faltas</h6>
+
+                        <h2>12</h2>
+                      </div>
+
+                      <div class="metric-icon">
+                        <i class="bi bi-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <div class="card metric-card">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                      <div>
+                        <h6 class="text-muted">Promedio general</h6>
+
+                        <h2>91%</h2>
+                      </div>
+
+                      <div class="metric-icon">
+                        <i class="bi bi-award"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-4">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <i class="bi bi-exclamation-triangle"></i>
+                  Alumnos en riesgo
+                </h5>
+              </div>
+
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-hover align-middle">
+                    <thead>
+                      <tr>
+                        <th>Alumno</th>
+                        <th>Asistencias</th>
+                        <th>Faltas</th>
+                        <th>Porcentaje</th>
+                        <th>Estado</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <tr>
+                        <td>Juan Pérez</td>
+                        <td>15</td>
+                        <td>9</td>
+                        <td>63%</td>
+                        <td>
+                          <span class="badge text-bg-danger"> En riesgo </span>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>María García</td>
+                        <td>17</td>
+                        <td>7</td>
+                        <td>71%</td>
+                        <td>
+                          <span class="badge text-bg-warning">
+                            Reposición
+                          </span>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>Carlos Martínez</td>
+                        <td>18</td>
+                        <td>6</td>
+                        <td>75%</td>
+                        <td>
+                          <span class="badge text-bg-warning"> En riesgo </span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-4">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <i class="bi bi-star"></i>
+                  Alumnos sin ninguna falta
+                </h5>
+              </div>
+
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-hover align-middle">
+                    <thead>
+                      <tr>
+                        <th>Alumno</th>
+                        <th>Clases</th>
+                        <th>Asistencias</th>
+                        <th>Promedio</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <tr>
+                        <td>Ana López</td>
+                        <td>24</td>
+                        <td>24</td>
+                        <td>100%</td>
+                      </tr>
+
+                      <tr>
+                        <td>Dixmar Hernández</td>
+                        <td>24</td>
+                        <td>24</td>
+                        <td>100%</td>
+                      </tr>
+
+                      <tr>
+                        <td>Adilia Lopez</td>
+                        <td>24</td>
+                        <td>24</td>
+                        <td>100%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="js/script.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "primer-parcial",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "glob": "^13.0.6",
+    "less": "^4.9.1",
+    "vite": "^8.3.0",
+    "vite-plugin-handlebars": "^2.0.3"
+  }
+}
